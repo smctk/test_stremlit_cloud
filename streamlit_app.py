@@ -12,9 +12,6 @@ def show_messages(text):
 
 st.header("GPT私設秘書")
 
-with open("secrets.toml", "r") as f:
-    config = toml.load(f)
-
 openai.api_key = config.api_key
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
