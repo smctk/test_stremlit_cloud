@@ -15,7 +15,7 @@ st.header("GPT私設秘書")
 ##If used privately : openai.api_key = config.api_key
 
 #If used with streamlitcloud
-openai.api_key = st.secrets[chatGPT].OPENAI_KEY
+openai.api_key = st.secrets["chatGPT"]["OPENAI_KEY"]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 if "messages" not in st.session_state:
