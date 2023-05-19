@@ -27,7 +27,7 @@ show_messages(text)
 
 col3_1, col3_2 = st.columns([5,1]);
 with col3_1:
-    st.caption("chatGPTがあなたの質問に答えます。履歴を消したい場合は消去を押して下さい")
+    st.caption("GPT3.5があなたの質問に答えます。履歴を消したい場合は消去を押して下さい")
 with col3_2:
     if st.button("消去"):
         st.session_state["messages"] = BASE_PROMPT
