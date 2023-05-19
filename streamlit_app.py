@@ -12,7 +12,10 @@ def show_messages(text):
 
 st.header("GPT私設秘書")
 
-openai.api_key = config.api_key
+##If used privately : openai.api_key = config.api_key
+
+#If used with streamlitcloud
+openai.api_key = st.secrets[OPENAI_KEY]
 BASE_PROMPT = [{"role": "system", "content": "You are a helpful assistant."}]
 
 if "messages" not in st.session_state:
