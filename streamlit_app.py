@@ -45,7 +45,7 @@ with col2:
         with st.spinner("メッセージを生成中..."):
             st.session_state["messages"] += [{"role": "user", "content": prompt}]
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=st.session_state["messages"]
+                model="gpt-3.5-turbo", messages=st.session_state["messages"],temperature=0.3
             )
             message_response = response["choices"][0]["message"]["content"]
             st.session_state["messages"] += [
