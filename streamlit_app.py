@@ -10,7 +10,7 @@ def show_messages(text):
     text.text_area("メッセージ履歴", value=str("\n".join(messages_str)), height=400)
 
 
-st.header("GPT私設秘書")
+st.header("GPTアシスタント")
 
 ##If used privately : openai.api_key = config.api_key
 
@@ -45,7 +45,7 @@ with col2:
         with st.spinner("メッセージを生成中..."):
             st.session_state["messages"] += [{"role": "user", "content": prompt}]
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=st.session_state["messages"],temperature=0.3
+                model="gpt-3.5-turbo", messages=st.session_state["messages"], temperature=0.3, max_tokens =1024
             )
             message_response = response["choices"][0]["message"]["content"]
             st.session_state["messages"] += [
