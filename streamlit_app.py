@@ -51,7 +51,7 @@ col2_1, col2_2 = st.columns([8, 2])
 with col2_1:
     prompt = st.text_input("入力欄 👇", value="",placeholder="ここに質問を記入してください")
 
-with col2_3:
+with col2_2:
     st.caption("送信して質問")
     if st.button("送信"):
         with st.spinner("メッセージを生成中..."):
