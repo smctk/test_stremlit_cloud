@@ -27,7 +27,7 @@ show_messages(text)
 
 col1_1, col1_2, col1_3, col1_4 = st.columns([6,2,2,2]);
 with col1_1:
-    st.caption("GPT3.5があなたの質問に答えます。履歴を消したい場合は消去を押して下さい")
+    st.caption("chatGPTがあなたの質問に答えます。空のままでリセットしないでください。設定はリセット後に反映されます")
     
 with col1_2:
     role = st.radio("口調",("東京","大阪"))
