@@ -16,7 +16,7 @@ st.header("GPTアシスタント")
 
 #If used with streamlitcloud
 openai.api_key = st.secrets["chatGPT"]["OPENAI_KEY"]
-BASE_PROMPT = [{"role": "system", "content": "あなたは関西弁で話す親切なおばちゃんです"}]
+BASE_PROMPT = [{"role": "system", "content": "あなたは関西弁で話す親切なおばちゃんとして振舞ってください"}]
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = BASE_PROMPT
@@ -48,7 +48,7 @@ with col2_3:
         with st.spinner("メッセージを生成中..."):
             st.session_state["messages"] += [{"role": "user", "content": prompt}]
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=st.session_state["messages"], temperature=Select_temp, max_tokens =256
+                model="gpt-3.5-turbo", messages=st.session_state["messages"], temperature=Select_temp, max_tokens =512
             )
             message_response = response["choices"][0]["message"]["content"]
             st.session_state["messages"] += [
